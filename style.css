@@ -73,11 +73,11 @@ span {
     display: flex;
     -ms-overflow-style: none;
     scrollbar-width: none;
-  }
-  
+}
+
 .opcoes::-webkit-scrollbar {
     display: none;
-  }
+}
 
 .produto {
     width: 172px;
@@ -107,7 +107,7 @@ span {
     color: #32B72F;
 }
 
-.opcoes > div div {
+.opcoes>div div {
     width: 144px;
 }
 
@@ -147,7 +147,7 @@ span {
     border: none;
 }
 
-.botao-pedido > p {
+.botao-pedido>p {
     width: 215px;
 }
 
@@ -159,3 +159,77 @@ span {
     background-color: #32B72F;
     font-weight: 700;
 }
+
+.confirmar-pedido {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+  }
+  
+  .caixa-confirmacao {
+    background-color: #50d074;
+    width: 360px;
+    height: 353px;
+    box-sizing: border-box;
+    padding: 20px 25px;
+    border-radius: 9px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    font-size: 22px;
+  }
+  
+  .caixa-confirmacao div {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .caixa-confirmacao > div:first-child {
+    margin-bottom: 10px;
+    justify-content: center;
+    font-weight: 700;
+  }
+  
+  .caixa-confirmacao span {
+    color: white;
+    font-size: 22px;
+    font-weight: 400;
+  }
+  
+  .total-pedido {
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  
+  .total-pedido > span {
+    font-weight: 700;
+  }
+  
+  .caixa-confirmacao button {
+    border: none;
+  }
+  
+  .botao-confirmar {
+    color: #50d074;
+    background-color: white;
+    font-weight: 700;
+    font-size: 22px;
+    border-radius: 100px;
+    height: 52px;
+  }
+  
+  .botao-cancelar {
+    color: white;
+    background: none;
+    font-weight: 700;
+    font-size: 20px;
+  }
