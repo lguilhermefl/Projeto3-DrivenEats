@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <title>DrivenEats</title>
+</head>
+
+<body>
+
+    <div class="topo">
+        <div class="logo">
+            <h1 class="righteous">DivenEats</h1>
+            <p>Sua comida em 6 minutos</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="categorias">
+            <h4 class="righteous">Primeiro, seu prato</h4>
+            <div class="opcoes pratos">
+                <div class="produto" onclick="marcarProduto(this)">
+                    <img src="imagens/frango.jpg" />
+                    <div class="titulo"><span>Frango Yin Yang</span></div>
+                    <div class="descricao"><p>Um pouco de batata, um pouco de salada</p></div>
+                    <div class="preco">R$ <span>11,90</span></div>
+                    <ion-icon class="check escondido" name="checkmark-circle-sharp"></ion-icon>
+                </div>
+                <div class="produto" onclick="marcarProduto(this)">
+                    <img src="imagens/frango.jpg" />
+                    <div class="titulo"><span>Frango Yin Yang</span></div>
+                    <div class="descricao"><p>Um pouco de batata, um pouco de salada</p></div>
+                    <div class="preco">R$ <span>14,90</span></div>
+                    <ion-icon class="check escondido" name="checkmark-circle-sharp"></ion-icon>
+                </div>
+                <div class="produto" onclick="marcarProduto(this)">
+                    <img src="imagens/frango.jpg" />
+                    <div class="titulo"><span>Frango Yin Yang</span></div>
+                    <div class="descricao"><p>Um pouco de batata, um pouco de salada</p></div>
+                    <div class="preco">R$ <span>16,90</span></div>
+                    <ion-icon class="check escondido" name="checkmark-circle-sharp"></ion-icon>
+                </div>
+            </div>
+        </div>
+        <div class="categorias">
+            <h4 class="righteous">Agora, sua bebida</h4>
+            <div class="opcoes bebidas">
+                <div class="produto" onclick="marcarProduto(this)">
+                    <img src="imagens/bebida.jpg" />
+                    <div class="titulo"><span>Refrigerante lata</span></div>
+                    <div class="descricao"><p>Lata 350ml</p></div>
+                    <div class="preco">R$ <span>4,90</span></div>
+                    <ion-icon class="check escondido" name="checkmark-circle-sharp"></ion-icon>
+                </div>
+                <div class="produto" onclick="marcarProduto(this)">
+                    <img src="imagens/bebida.jpg" />
+                    <div class="titulo"><span>Refrigerante lata</span></div>
+                    <div class="descricao"><p>Lata 350ml</p></div>
+                    <div class="preco">R$ <span>5,90</span></div>
+                    <ion-icon class="check escondido" name="checkmark-circle-sharp"></ion-icon>
+                </div>
+                <div class="produto" onclick="marcarProduto(this)">
+                    <img src="imagens/bebida.jpg" />
+                    <div class="titulo"><span>Refrigerante lata</span></div>
+                    <div class="descricao"><p>Lata 350ml</p></div>
+                    <div class="preco">R$ <span>6,90</span></div>
+                    <ion-icon class="check escondido" name="checkmark-circle-sharp"></ion-icon>
+                </div>
+            </div>
+        </div>
+        <div class="categorias">
+            <h4 class="righteous">Por fim, sua sobremesa</h4>
+            <div class="opcoes sobremesas">
+                <div class="produto" onclick="marcarProduto(this)">
+                    <img src="imagens/pudim.webp" />
+                    <div class="titulo"><span>Pudim</span></div>
+                    <div class="descricao"><p>Apenas pudim</p></div>
+                    <div class="preco">R$ <span>5,90</span></div>
+                    <ion-icon class="check escondido" name="checkmark-circle-sharp"></ion-icon>
+                </div>
+                <div class="produto" onclick="marcarProduto(this)">
+                    <img src="imagens/pudim.webp" />
+                    <div class="titulo"><span>Pudim</span></div>
+                    <div class="descricao"><p>Apenas pudim</p></div>
+                    <div class="preco">R$ <span>6,90</span></div>
+                    <ion-icon class="check escondido" name="checkmark-circle-sharp"></ion-icon>
+                </div>
+                <div class="produto" onclick="marcarProduto(this)">
+                    <img src="imagens/pudim.webp" />
+                    <div class="titulo"><span>Pudim</span></div>
+                    <div class="descricao"><p>Apenas pudim</p></div>
+                    <div class="preco">R$ <span>7,90</span></div>
+                    <ion-icon class="check escondido" name="checkmark-circle-sharp"></ion-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fechar-pedido">
+        <button class="botao-pedido" onclick="pedir(this)"><p class="texto-botao">Selecione os 3 itens para fechar o pedido</p></button>
+    </div>
+    <div></div>
+    <script src="scripts.js"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</body>
+
+</html>

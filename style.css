@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.righteous {
+    font-family: Righteous;
+}
+
+body {
+    font-family: Roboto;
+    background-color: #e5e5e5;
+}
+
+.topo {
+    background-color: #CF2B2B;
+    height: 92px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+    margin-left: 21px;
+    color: #fff;
+}
+
+.logo h1 {
+    font-size: 44px;
+}
+
+.logo p {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.container {
+    margin-left: 13px;
+    margin-top: 92px;
+    display: flex;
+    margin-bottom: 110px;
+    flex-direction: column;
+}
+
+.container h4 {
+    font-size: 26px;
+    color: #333;
+    margin-left: 5px;
+}
+
+.container p {
+    font-size: 15px;
+    font-weight: 300;
+    color: #a6a6a6;
+}
+
+span {
+    font-weight: 700;
+    font-size: 16px;
+    color: #333;
+}
+
+.categorias {
+    margin-top: 25px;
+}
+
+.opcoes {
+    margin-top: 16px;
+    padding: 0 5px 5px 5px;
+    overflow-x: scroll;
+    display: flex;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+.opcoes::-webkit-scrollbar {
+    display: none;
+  }
+
+.produto {
+    width: 172px;
+    height: 216px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 9px;
+    margin-right: 15px;
+    padding: 14px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 4px 0px rgb(0 0 0 / 10%);
+    position: relative;
+}
+
+.selecionado {
+    border: 4px solid #32B72F;
+    padding: 10px;
+}
+
+.check {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    color: #32B72F;
+}
+
+.opcoes > div div {
+    width: 144px;
+}
+
+.opcoes img {
+    width: 144px;
+    height: 87px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.fechar-pedido {
+    height: 92px;
+    background-color: #fff;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0 25px;
+    box-sizing: border-box;
+}
+
+.botao-pedido {
+    border-radius: 50px;
+    background-color: #CBCBCB;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.botao-pedido > p {
+    width: 215px;
+}
+
+.escondido {
+    display: none;
+}
+
+.botao-ativo {
+    background-color: #32B72F;
+    font-weight: 700;
+}
