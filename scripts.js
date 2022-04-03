@@ -41,6 +41,7 @@ function marcarPorCategoria(selecionado, produto, categoriaMarcada) {
     /* - VERIFICA SE NOVA SELEÇÃO DE PRODUTO É DIFERENTE DA ANTERIOR E MARCA NOVA SELEÇÃO
        - ARMAZENA VALORES DOS ITENS SELECIONADOS */
     if (selecionado !== produto) {
+
         /* - ADICIONA A CLASSE "SELECIONADO" AO PRODUTO E MOSTRA MARCADOR
            - TRANSFORMA MARCADOR DECIMAL DO PREÇO DE VÍRGULA PARA PONTO */
         produto.classList.add("selecionado");
@@ -97,7 +98,17 @@ function marcarProduto(produto) {
 
 //ENVIA OS VALORES DO PEDIDO VIA MENSAGEM POR WHATSAPP
 function pedir() {
-    let mensagemPedido = `Olá, gostaria de fazer o pedido: \n- Prato: ${pratoEscolhido}\n- Bebida: ${bebidaEscolhida}\n- Sobremesa: ${sobremesaEscolhida}\nTotal: R$ ${total}`;
-    mensagemPedido = encodeURIComponent(mensagemPedido);
-    window.open(`https://wa.me/5532998188861?text=${mensagemPedido}`);
+
+    let nome = prompt("Informe quem receberá o pedido:");
+    let endereco = prompt("Informe o endereço completo de entrega:");
+
+    //VERIFICA SE NOME E ENDEREÇO FORAM INFORMADOS
+    if (nome !== "" && endereco !== "" && nome !== null && endereco !== null) {
+        let mensagemPedido = `Olá, gostaria de fazer o pedido: \n- Prato: ${pratoEscolhido}\n- Bebida: ${bebidaEscolhida}\n- Sobremesa: ${sobremesaEscolhida}\nTotal: R$ ${total}\n\nNome: ${nome}\nEndereço: ${endereco}`;
+        mensagemPedido = encodeURIComponent(mensagemPedido);
+        window.open(`https://wa.me/5532998188861?text=${mensagemPedido}`);
+    } else {
+        alert("Por favor informe quem receberá o pedido e o endereço de entrega!");
+    }
+
 }
