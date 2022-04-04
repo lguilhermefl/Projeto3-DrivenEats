@@ -85,22 +85,17 @@ function marcarProduto(produto) {
     const categoriaMarcada = produto.parentElement.classList.item(1);
     //BUSCA ELEMENTO DO BOTÃO "FECHAR PEDIDO"
     const botaoPedido = document.querySelector(".botao-pedido");
-
+    //CHAMA FUNÇÃO DE MARCAR PRODUTO COM ELEMENTO DA CATEGORIA SELECIONADA, ELEMENTO DO PRODUTO ESCOLHIDO E NOME DA CATEGORIA SELECIONADA
     marcarPorCategoria(selecionado, produto, categoriaMarcada);
 
     //VERIFICA SE FOI ESCOLHIDA UMA OPÇÃO EM CADA CATEGORIA E ATIVA O BOTÃO EM CASO VERDADEIRO
-    if (
-        pratoEscolhido !== undefined &&
-        bebidaEscolhida !== undefined &&
-        sobremesaEscolhida !== undefined
-    ) {
+    if (pratoEscolhido !== undefined && bebidaEscolhida !== undefined && sobremesaEscolhida !== undefined) {
         botaoPedido.classList.add("botao-ativo");
         botaoPedido.querySelector("p").innerText = "Fechar Pedido";
         botaoPedido.disabled = false;
     } else {
         botaoPedido.classList.remove("botao-ativo");
-        botaoPedido.querySelector("p").innerText =
-            "Selecione os 3 itens para fechar o pedido";
+        botaoPedido.querySelector("p").innerText = "Selecione os 3 itens para fechar o pedido";
         botaoPedido.disabled = true;
     }
 }
@@ -110,25 +105,27 @@ function pedir() {
     nome = prompt("Informe quem receberá o pedido:");
     endereco = prompt("Informe o endereço completo de entrega:");
 
-    //VERIFICA SE NOME E ENDEREÇO FORAM INFORMADOS
+    /* - VERIFICA SE NOME E ENDEREÇO FORAM INFORMADOS
+       - EM CASO VERDADEIRO ADICIONA OS ITENS ESCOLHIDOS E SEUS VALORES NOS ELEMENTOS DA CAIXA DE CONFIRMAÇÃO E MOSTRA A CAIXA*/
     if (nome !== "" && endereco !== "" && nome !== null && endereco !== null) {
+        //VARIÁVEIS DE ARMAZENAMENTO DOS ITENS ESCOLHIDOS PARA CAIXA DE CONFIRMAÇÃO
         const janelaConfirmacao = document.querySelector(".confirmar-pedido");
         const pratoConfirmar = janelaConfirmacao.querySelector(".prato-escolhido");
         const bebidaConfirmar = janelaConfirmacao.querySelector(".bebida-escolhida");
         const sobremesaConfirmar = janelaConfirmacao.querySelector(".sobremesa-escolhida");
         const totalConfirmar = janelaConfirmacao.querySelector(".total-pedido");
 
+        //SUBSTITUI PONTO POR VÍRGULA NOS PREÇOS
         function pontoPorVirgula (preco) {
             return preco.toFixed(2).replace(".", ",");
         }
-
+        //VARIÁVEIS DE ARMAZENAMENTO DOS PREÇOS DAS OPÇÕES ESCOLHIDAS
         let precoPratoConfirmar = pontoPorVirgula(precoPrato);
         let precoBebidaConfirmar = pontoPorVirgula(precoBebida);
         let precoSobremesaConfirmar = pontoPorVirgula(precoSobremesa);
         let valorTotalConfirmar = total.replace(".", ",");
 
-        janelaConfirmacao.classList.remove("escondido");
-
+        //SUBSTITUIÇÃO DOS PREÇOS E NOMES DOS PRATOS ESCOLHIDOS PARA CAIXA DE CONFIRMAÇÃO 
         pratoConfirmar.querySelector("p").innerText = pratoEscolhido;
         pratoConfirmar.querySelector("span").innerText = precoPratoConfirmar;
         bebidaConfirmar.querySelector("p").innerText = bebidaEscolhida;
@@ -137,18 +134,21 @@ function pedir() {
         sobremesaConfirmar.querySelector("span").innerText = precoSobremesaConfirmar;
         totalConfirmar.querySelector("span").innerText = `R$ ${valorTotalConfirmar}`;
         
+        //MOSTRA A CAIXA DE CONFIRMAÇÃO
+        janelaConfirmacao.classList.remove("escondido");
+
     } else {
         alert("Por favor informe quem receberá o pedido e o endereço de entrega!");
     }
 }
 
+//ENVIA MENSAGEM VIA WHATSAPP COM TODAS AS INFORMAÇÕES DO PEDIDO
 function confirmarPedido() {
-
     let mensagemPedido = `Olá, gostaria de fazer o pedido: \n- Prato: ${pratoEscolhido}\n- Bebida: ${bebidaEscolhida}\n- Sobremesa: ${sobremesaEscolhida}\nTotal: R$ ${total}\n\nNome: ${nome}\nEndereço: ${endereco}`;
     mensagemPedido = encodeURIComponent(mensagemPedido);
     window.open(`https://wa.me/5532998188861?text=${mensagemPedido}`);
 }
-
+//VOLTA PARA TELA INICIAL DE SELEÇÃO DO PEDIDO
 function cancelarPedido() {
     document.querySelector(".confirmar-pedido").classList.add("escondido");
 }
